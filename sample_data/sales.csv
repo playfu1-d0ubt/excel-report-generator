@@ -1,0 +1,401 @@
+order_id,date,region,product,quantity,unit_price
+113,2026-01-01,East,Backpack,5,39.0
+85,2026-01-02,East,Desk lamp,1,24.0
+295,2026-01-02,East,Pen set,5,6.0
+33,2026-01-02,East,Pen set,4,6.0
+327,2026-01-04,South,Desk lamp,3,24.0
+275,2026-01-08,East,Notebook,4,3.5
+226,2026-01-08,West,Pen set,3,6.0
+184,2026-01-08,South,Pen set,3,6.0
+173,2026-01-09,North,Backpack,4,39.0
+148,2026-01-10,North,Notebook,4,3.5
+137,2026-01-11,West,Backpack,5,39.0
+211,2026-01-11,East,Notebook,2,3.5
+98,2026-01-13,South,Pen set,2,6.0
+119,2026-01-13,North,Pen set,2,6.0
+155,2026-01-14,East,Desk lamp,1,24.0
+143,2026-01-14,North,Backpack,5,39.0
+325,2026-01-14,East,Headphones,5,59.0
+297,2026-01-14,South,Notebook,6,3.5
+101,2026-01-15,North,Headphones,3,59.0
+225,2026-01-15,South,Backpack,1,39.0
+304,2026-01-16,North,Backpack,6,39.0
+329,2026-01-16,North,Pen set,6,6.0
+3,2026-01-17,North,Headphones,4,59.0
+247,2026-01-19,North,Backpack,5,39.0
+218,2026-01-19,West,Backpack,5,39.0
+240,2026-01-19,South,Pen set,4,6.0
+209,2026-01-21,West,Notebook,5,3.5
+267,2026-01-21,East,Notebook,6,3.5
+366,2026-01-22,West,Backpack,5,39.0
+345,2026-01-22,West,Backpack,6,39.0
+238,2026-01-23,East,Pen set,4,6.0
+303,2026-01-23,East,Headphones,2,59.0
+264,2026-01-26,West,Notebook,5,3.5
+374,2026-01-27,East,Desk lamp,6,24.0
+185,2026-01-28,East,Desk lamp,1,24.0
+399,2026-01-28,West,Notebook,4,3.5
+191,2026-01-28,South,Headphones,6,59.0
+251,2026-01-29,East,Notebook,3,3.5
+48,2026-01-31,South,Notebook,1,3.5
+62,2026-01-31,South,Pen set,4,6.0
+196,2026-01-31,North,Headphones,5,59.0
+66,2026-02-01,East,Notebook,5,3.5
+29,2026-02-02,West,Backpack,5,39.0
+69,2026-02-04,South,Notebook,5,3.5
+149,2026-02-05,North,Desk lamp,2,24.0
+77,2026-02-05,South,Pen set,3,6.0
+13,2026-02-05,North,Headphones,2,59.0
+293,2026-02-05,South,Headphones,2,59.0
+205,2026-02-06,North,Desk lamp,2,24.0
+120,2026-02-07,West,Pen set,4,6.0
+74,2026-02-07,North,Backpack,3,39.0
+273,2026-02-08,South,Notebook,4,3.5
+353,2026-02-09,North,Desk lamp,2,24.0
+346,2026-02-09,East,Notebook,4,3.5
+39,2026-02-10,North,Notebook,2,3.5
+14,2026-02-10,South,Pen set,3,6.0
+254,2026-02-10,West,Pen set,2,6.0
+68,2026-02-11,South,Notebook,5,3.5
+171,2026-02-13,South,Headphones,2,59.0
+379,2026-02-13,East,Headphones,6,59.0
+84,2026-02-17,West,Desk lamp,1,24.0
+316,2026-02-17,West,Notebook,1,3.5
+60,2026-02-17,South,Headphones,1,59.0
+375,2026-02-18,West,Notebook,3,3.5
+288,2026-02-20,East,Pen set,3,6.0
+59,2026-02-20,North,Notebook,4,3.5
+285,2026-02-20,West,Backpack,6,39.0
+249,2026-02-20,North,Notebook,4,3.5
+75,2026-02-21,North,Backpack,5,39.0
+2,2026-02-22,North,Pen set,2,6.0
+369,2026-02-22,East,Notebook,4,3.5
+80,2026-02-23,South,Headphones,3,59.0
+216,2026-02-23,South,Desk lamp,3,24.0
+261,2026-02-24,South,Backpack,4,39.0
+161,2026-02-24,West,Backpack,4,39.0
+81,2026-02-24,South,Desk lamp,1,24.0
+350,2026-02-24,South,Notebook,4,3.5
+302,2026-02-25,West,Headphones,5,59.0
+337,2026-02-26,East,Desk lamp,4,24.0
+31,2026-02-28,East,Headphones,1,59.0
+154,2026-02-28,South,Pen set,5,6.0
+227,2026-02-28,West,Notebook,2,3.5
+152,2026-02-28,South,Backpack,6,39.0
+158,2026-03-03,North,Desk lamp,6,24.0
+45,2026-03-03,South,Headphones,4,59.0
+11,2026-03-05,West,Backpack,5,39.0
+40,2026-03-06,South,Backpack,1,39.0
+142,2026-03-07,North,Pen set,4,6.0
+73,2026-03-09,East,Desk lamp,4,24.0
+386,2026-03-09,West,Desk lamp,5,24.0
+51,2026-03-09,West,Pen set,5,6.0
+270,2026-03-09,East,Pen set,2,6.0
+232,2026-03-11,North,Headphones,5,59.0
+283,2026-03-11,West,Notebook,2,3.5
+393,2026-03-12,East,Pen set,2,6.0
+281,2026-03-13,North,Backpack,1,39.0
+57,2026-03-13,West,Headphones,4,59.0
+377,2026-03-14,East,Notebook,5,3.5
+243,2026-03-15,West,Notebook,6,3.5
+397,2026-03-17,West,Backpack,5,39.0
+355,2026-03-17,South,Desk lamp,6,24.0
+307,2026-03-17,North,Notebook,3,3.5
+89,2026-03-17,West,Desk lamp,5,24.0
+88,2026-03-18,North,Notebook,1,3.5
+376,2026-03-18,East,Desk lamp,3,24.0
+357,2026-03-20,North,Pen set,5,6.0
+228,2026-03-20,West,Notebook,6,3.5
+28,2026-03-20,South,Notebook,1,3.5
+384,2026-03-21,North,Pen set,2,6.0
+78,2026-03-22,West,Desk lamp,3,24.0
+258,2026-03-22,North,Backpack,3,39.0
+199,2026-03-22,North,Headphones,1,59.0
+333,2026-03-22,North,Notebook,2,3.5
+331,2026-03-22,East,Backpack,3,39.0
+372,2026-03-23,East,Headphones,5,59.0
+128,2026-03-23,West,Headphones,4,59.0
+95,2026-03-23,North,Pen set,3,6.0
+36,2026-03-24,North,Pen set,3,6.0
+396,2026-03-24,East,Desk lamp,1,24.0
+41,2026-03-26,East,Backpack,5,39.0
+116,2026-03-28,North,Headphones,4,59.0
+18,2026-03-29,South,Headphones,6,59.0
+370,2026-03-30,North,Notebook,5,3.5
+212,2026-03-31,West,Headphones,1,59.0
+112,2026-03-31,East,Backpack,6,39.0
+93,2026-04-01,West,Pen set,2,6.0
+387,2026-04-03,South,Pen set,2,6.0
+180,2026-04-05,South,Notebook,6,3.5
+367,2026-04-07,East,Headphones,6,59.0
+105,2026-04-08,East,Backpack,5,39.0
+290,2026-04-08,North,Backpack,3,39.0
+56,2026-04-09,South,Notebook,2,3.5
+179,2026-04-09,East,Notebook,6,3.5
+111,2026-04-09,West,Headphones,2,59.0
+121,2026-04-10,West,Backpack,6,39.0
+354,2026-04-10,East,Headphones,5,59.0
+107,2026-04-11,East,Headphones,5,59.0
+203,2026-04-12,West,Headphones,6,59.0
+150,2026-04-13,North,Notebook,2,3.5
+43,2026-04-13,East,Headphones,6,59.0
+223,2026-04-15,East,Backpack,1,39.0
+136,2026-04-16,West,Backpack,1,39.0
+91,2026-04-18,South,Notebook,3,3.5
+82,2026-04-18,East,Desk lamp,3,24.0
+291,2026-04-19,North,Backpack,1,39.0
+197,2026-04-19,East,Pen set,6,6.0
+22,2026-04-19,East,Desk lamp,1,24.0
+134,2026-04-20,North,Pen set,6,6.0
+8,2026-04-21,East,Desk lamp,2,24.0
+311,2026-04-21,West,Notebook,6,3.5
+139,2026-04-23,West,Backpack,4,39.0
+324,2026-04-26,West,Desk lamp,5,24.0
+204,2026-04-26,South,Notebook,5,3.5
+183,2026-04-27,East,Pen set,3,6.0
+47,2026-04-28,South,Headphones,5,59.0
+256,2026-04-29,West,Headphones,2,59.0
+133,2026-04-29,West,Pen set,2,6.0
+202,2026-04-30,East,Backpack,1,39.0
+294,2026-04-30,East,Headphones,2,59.0
+4,2026-04-30,North,Notebook,2,3.5
+278,2026-04-30,West,Notebook,6,3.5
+400,2026-05-01,West,Headphones,3,59.0
+298,2026-05-02,East,Notebook,3,3.5
+151,2026-05-03,South,Headphones,2,59.0
+237,2026-05-03,West,Desk lamp,2,24.0
+198,2026-05-03,South,Notebook,2,3.5
+390,2026-05-03,East,Pen set,5,6.0
+130,2026-05-03,East,Headphones,4,59.0
+255,2026-05-04,West,Headphones,6,59.0
+172,2026-05-04,West,Backpack,4,39.0
+230,2026-05-05,West,Backpack,4,39.0
+157,2026-05-05,North,Pen set,1,6.0
+292,2026-05-05,South,Notebook,3,3.5
+122,2026-05-05,South,Backpack,4,39.0
+129,2026-05-07,East,Backpack,3,39.0
+70,2026-05-07,North,Backpack,1,39.0
+125,2026-05-08,North,Notebook,5,3.5
+210,2026-05-09,North,Desk lamp,5,24.0
+296,2026-05-09,South,Pen set,2,6.0
+178,2026-05-09,South,Desk lamp,3,24.0
+266,2026-05-09,South,Pen set,5,6.0
+219,2026-05-10,East,Notebook,3,3.5
+257,2026-05-11,North,Desk lamp,4,24.0
+356,2026-05-12,South,Notebook,2,3.5
+153,2026-05-12,East,Backpack,6,39.0
+86,2026-05-15,South,Pen set,6,6.0
+25,2026-05-15,West,Pen set,6,6.0
+83,2026-05-16,West,Pen set,6,6.0
+102,2026-05-16,North,Desk lamp,2,24.0
+24,2026-05-16,South,Backpack,2,39.0
+10,2026-05-16,North,Desk lamp,3,24.0
+299,2026-05-16,North,Notebook,2,3.5
+17,2026-05-17,North,Pen set,6,6.0
+165,2026-05-18,East,Backpack,6,39.0
+326,2026-05-20,East,Notebook,2,3.5
+229,2026-05-20,West,Desk lamp,5,24.0
+271,2026-05-20,South,Headphones,5,59.0
+1,2026-05-21,South,Notebook,1,3.5
+170,2026-05-22,North,Desk lamp,3,24.0
+99,2026-05-23,North,Backpack,3,39.0
+50,2026-05-23,West,Headphones,2,59.0
+166,2026-05-23,West,Pen set,1,6.0
+15,2026-05-23,West,Notebook,4,3.5
+6,2026-05-23,North,Backpack,5,39.0
+286,2026-05-24,North,Headphones,4,59.0
+182,2026-05-25,North,Headphones,5,59.0
+187,2026-05-26,West,Notebook,5,3.5
+389,2026-05-26,West,Pen set,4,6.0
+131,2026-05-27,South,Backpack,1,39.0
+364,2026-05-27,North,Notebook,3,3.5
+224,2026-05-28,West,Headphones,2,59.0
+201,2026-05-28,East,Notebook,2,3.5
+248,2026-05-28,South,Pen set,6,6.0
+206,2026-05-28,West,Pen set,3,6.0
+341,2026-05-29,East,Pen set,3,6.0
+32,2026-05-31,West,Desk lamp,1,24.0
+12,2026-05-31,East,Notebook,5,3.5
+309,2026-05-31,West,Headphones,5,59.0
+272,2026-06-01,East,Desk lamp,4,24.0
+65,2026-06-01,South,Pen set,2,6.0
+234,2026-06-02,West,Notebook,3,3.5
+259,2026-06-03,West,Backpack,3,39.0
+109,2026-06-03,East,Notebook,6,3.5
+250,2026-06-03,North,Backpack,2,39.0
+79,2026-06-04,North,Headphones,6,59.0
+340,2026-06-04,South,Notebook,2,3.5
+260,2026-06-04,South,Desk lamp,4,24.0
+192,2026-06-05,North,Pen set,5,6.0
+207,2026-06-05,West,Notebook,4,3.5
+361,2026-06-05,East,Backpack,4,39.0
+38,2026-06-07,South,Notebook,3,3.5
+90,2026-06-07,East,Pen set,1,6.0
+382,2026-06-08,South,Notebook,3,3.5
+118,2026-06-08,South,Pen set,6,6.0
+320,2026-06-09,East,Desk lamp,5,24.0
+72,2026-06-10,South,Desk lamp,2,24.0
+314,2026-06-10,East,Desk lamp,4,24.0
+21,2026-06-11,West,Pen set,1,6.0
+132,2026-06-13,North,Desk lamp,3,24.0
+308,2026-06-16,West,Pen set,3,6.0
+20,2026-06-16,North,Headphones,2,59.0
+332,2026-06-16,North,Desk lamp,6,24.0
+168,2026-06-16,South,Notebook,4,3.5
+269,2026-06-17,West,Notebook,3,3.5
+279,2026-06-17,South,Notebook,5,3.5
+146,2026-06-17,East,Pen set,4,6.0
+318,2026-06-18,North,Headphones,1,59.0
+380,2026-06-18,South,Headphones,4,59.0
+135,2026-06-19,West,Backpack,4,39.0
+108,2026-06-19,East,Backpack,1,39.0
+49,2026-06-19,North,Notebook,1,3.5
+241,2026-06-19,North,Headphones,5,59.0
+94,2026-06-20,West,Notebook,2,3.5
+117,2026-06-21,North,Desk lamp,5,24.0
+141,2026-06-22,West,Notebook,4,3.5
+352,2026-06-23,South,Backpack,3,39.0
+46,2026-06-23,North,Pen set,1,6.0
+233,2026-06-24,East,Desk lamp,4,24.0
+188,2026-06-24,South,Backpack,4,39.0
+160,2026-06-24,North,Notebook,5,3.5
+176,2026-06-26,West,Headphones,5,59.0
+215,2026-06-28,West,Notebook,4,3.5
+97,2026-06-29,East,Pen set,4,6.0
+138,2026-06-30,East,Backpack,1,39.0
+177,2026-06-30,West,Headphones,3,59.0
+265,2026-06-30,South,Desk lamp,2,24.0
+362,2026-06-30,North,Headphones,1,59.0
+344,2026-07-01,North,Headphones,5,59.0
+169,2026-07-01,East,Backpack,2,39.0
+262,2026-07-03,East,Backpack,5,39.0
+289,2026-07-03,North,Headphones,6,59.0
+222,2026-07-05,West,Pen set,5,6.0
+26,2026-07-05,South,Headphones,4,59.0
+268,2026-07-06,South,Backpack,1,39.0
+323,2026-07-08,North,Notebook,3,3.5
+391,2026-07-08,West,Backpack,2,39.0
+175,2026-07-08,West,Desk lamp,6,24.0
+16,2026-07-09,East,Desk lamp,2,24.0
+317,2026-07-10,South,Notebook,6,3.5
+44,2026-07-11,West,Backpack,6,39.0
+330,2026-07-12,West,Headphones,2,59.0
+156,2026-07-12,West,Headphones,6,59.0
+236,2026-07-13,West,Desk lamp,5,24.0
+9,2026-07-14,North,Notebook,1,3.5
+343,2026-07-14,South,Pen set,2,6.0
+167,2026-07-14,East,Pen set,4,6.0
+145,2026-07-14,East,Notebook,3,3.5
+246,2026-07-14,East,Desk lamp,6,24.0
+19,2026-07-14,East,Pen set,4,6.0
+277,2026-07-15,East,Desk lamp,5,24.0
+392,2026-07-15,West,Backpack,3,39.0
+239,2026-07-15,West,Backpack,6,39.0
+231,2026-07-16,South,Headphones,2,59.0
+373,2026-07-18,West,Desk lamp,3,24.0
+63,2026-07-19,East,Backpack,1,39.0
+378,2026-07-20,South,Desk lamp,6,24.0
+339,2026-07-22,North,Notebook,2,3.5
+263,2026-07-22,East,Desk lamp,1,24.0
+245,2026-07-23,North,Desk lamp,5,24.0
+274,2026-07-23,East,Pen set,6,6.0
+351,2026-07-25,North,Backpack,5,39.0
+328,2026-07-25,North,Pen set,5,6.0
+55,2026-07-26,East,Notebook,1,3.5
+110,2026-07-26,East,Backpack,3,39.0
+347,2026-07-27,West,Headphones,4,59.0
+174,2026-07-27,South,Desk lamp,2,24.0
+348,2026-07-27,North,Desk lamp,1,24.0
+92,2026-07-28,South,Notebook,3,3.5
+52,2026-07-28,South,Pen set,4,6.0
+388,2026-07-30,East,Backpack,1,39.0
+253,2026-07-30,South,Pen set,5,6.0
+312,2026-07-31,East,Backpack,2,39.0
+221,2026-07-31,North,Headphones,4,59.0
+313,2026-08-01,North,Backpack,4,39.0
+193,2026-08-02,South,Pen set,1,6.0
+71,2026-08-03,East,Headphones,1,59.0
+5,2026-08-03,South,Headphones,2,59.0
+284,2026-08-03,South,Backpack,3,39.0
+300,2026-08-04,North,Pen set,6,6.0
+147,2026-08-04,East,Backpack,3,39.0
+381,2026-08-05,East,Headphones,1,59.0
+64,2026-08-05,West,Backpack,3,39.0
+319,2026-08-05,North,Backpack,3,39.0
+7,2026-08-05,East,Pen set,6,6.0
+42,2026-08-05,South,Headphones,5,59.0
+123,2026-08-06,South,Notebook,1,3.5
+87,2026-08-07,North,Backpack,5,39.0
+305,2026-08-07,North,Backpack,4,39.0
+159,2026-08-08,East,Desk lamp,5,24.0
+195,2026-08-08,East,Desk lamp,5,24.0
+53,2026-08-09,East,Notebook,1,3.5
+252,2026-08-09,South,Desk lamp,3,24.0
+310,2026-08-09,North,Headphones,5,59.0
+114,2026-08-09,East,Desk lamp,2,24.0
+103,2026-08-11,East,Notebook,5,3.5
+140,2026-08-12,West,Pen set,3,6.0
+214,2026-08-12,West,Pen set,5,6.0
+106,2026-08-12,North,Notebook,6,3.5
+371,2026-08-13,West,Pen set,6,6.0
+360,2026-08-14,North,Desk lamp,2,24.0
+115,2026-08-15,South,Backpack,4,39.0
+213,2026-08-15,East,Headphones,6,59.0
+335,2026-08-15,West,Backpack,5,39.0
+334,2026-08-15,West,Notebook,3,3.5
+287,2026-08-16,West,Desk lamp,2,24.0
+306,2026-08-16,North,Backpack,6,39.0
+301,2026-08-18,East,Notebook,4,3.5
+359,2026-08-18,East,Headphones,5,59.0
+398,2026-08-19,East,Notebook,2,3.5
+194,2026-08-19,West,Headphones,4,59.0
+363,2026-08-20,North,Desk lamp,4,24.0
+276,2026-08-21,East,Headphones,1,59.0
+349,2026-08-24,East,Desk lamp,2,24.0
+162,2026-08-24,South,Desk lamp,6,24.0
+144,2026-08-25,South,Backpack,2,39.0
+58,2026-08-25,South,Pen set,3,6.0
+126,2026-08-26,East,Backpack,2,39.0
+280,2026-08-26,East,Notebook,6,3.5
+54,2026-08-28,North,Backpack,4,39.0
+30,2026-08-28,East,Backpack,5,39.0
+96,2026-08-29,South,Backpack,1,39.0
+244,2026-08-29,East,Pen set,1,6.0
+200,2026-08-29,East,Backpack,4,39.0
+315,2026-08-31,North,Desk lamp,2,24.0
+189,2026-09-02,North,Notebook,3,3.5
+67,2026-09-02,South,Notebook,1,3.5
+394,2026-09-04,East,Notebook,6,3.5
+322,2026-09-04,South,Pen set,6,6.0
+235,2026-09-05,East,Pen set,4,6.0
+181,2026-09-05,East,Pen set,6,6.0
+164,2026-09-05,West,Headphones,5,59.0
+61,2026-09-06,West,Pen set,4,6.0
+383,2026-09-06,South,Pen set,3,6.0
+37,2026-09-08,North,Headphones,3,59.0
+186,2026-09-09,North,Pen set,6,6.0
+190,2026-09-09,North,Notebook,4,3.5
+358,2026-09-10,West,Pen set,6,6.0
+282,2026-09-10,North,Notebook,3,3.5
+208,2026-09-10,West,Desk lamp,5,24.0
+27,2026-09-10,North,Pen set,5,6.0
+217,2026-09-11,East,Desk lamp,4,24.0
+342,2026-09-12,West,Notebook,1,3.5
+23,2026-09-13,West,Pen set,6,6.0
+368,2026-09-14,South,Headphones,4,59.0
+127,2026-09-16,West,Backpack,5,39.0
+321,2026-09-17,South,Notebook,5,3.5
+76,2026-09-17,East,Headphones,2,59.0
+365,2026-09-17,West,Notebook,5,3.5
+35,2026-09-17,South,Desk lamp,6,24.0
+34,2026-09-17,North,Headphones,2,59.0
+385,2026-09-17,North,Desk lamp,1,24.0
+100,2026-09-18,West,Desk lamp,3,24.0
+104,2026-09-19,North,Desk lamp,4,24.0
+336,2026-09-20,North,Desk lamp,2,24.0
+220,2026-09-21,North,Notebook,4,3.5
+395,2026-09-22,North,Headphones,1,59.0
+124,2026-09-23,West,Pen set,6,6.0
+163,2026-09-25,East,Backpack,2,39.0
+242,2026-09-27,West,Backpack,1,39.0
+338,2026-09-27,East,Headphones,4,59.0
