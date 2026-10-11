@@ -40,6 +40,10 @@ def style_table(ws, money_columns):
         cell.fill = HEADER_FILL
         cell.font = HEADER_FONT
         cell.alignment = Alignment(horizontal="center")
+    # leave the colour unset so the text is "automatic" and adapts to dark mode
+    for row in ws.iter_rows(min_row=2):
+        for cell in row:
+            cell.font = Font(name="Calibri", size=11)
     ws.freeze_panes = "A2"  # keep the header visible when scrolling
 
     for column in ws.columns:
@@ -58,6 +62,7 @@ def write_report(path, by_month, by_product, by_region):
         by_product.to_excel(writer, sheet_name="By product", index=False)
         by_region.to_excel(writer, sheet_name="By region", index=False)
 
+        
         for ws in writer.book.worksheets:
             style_table(ws, money_columns=["revenue"])
 
