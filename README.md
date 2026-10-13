@@ -6,7 +6,9 @@ A command-line tool that turns a sales CSV into a formatted Excel report, so nob
 python make_report.py sample_data/sales.csv sales_report.xlsx
 ```
 
-## What it produces
+## What it does
+
+### What it produces
 
 An Excel workbook with three sheets: revenue **by month**, **by product** and **by region**. Each sheet has a styled header row, money formatted as pounds, columns sized to fit their contents, and a chart next to the table.
 
@@ -14,13 +16,30 @@ An Excel workbook with three sheets: revenue **by month**, **by product** and **
 
 For the sample data (400 orders), the report totals £36,059.00 in revenue. The summaries are checked against each other: every table adds up to that same total.
 
-## What it does with messy data
+### What it does with messy data
 
 - Stops with a clear message if the file is missing, empty, or lacks a required column (`order_id`, `date`, `region`, `product`, `quantity`, `unit_price`)
 - Skips rows with an unreadable date, quantity or price, and says how many it skipped
 - Won't overwrite a report that is open in another program, and says so instead of crashing
 
+### Files
+
+| File | Purpose |
+|---|---|
+| `make_report.py` | Reads the CSV, builds the summaries, writes the Excel report |
+| `make_sample_data.py` | Generates a fake sales CSV (400 orders, same data every time) |
+| `sample_data/sales.csv` | The generated sample data. It is fake, with no real customer data |
+| `LICENSE` | MIT licence |
+
+### How it works
+
+1. **pandas** loads the CSV, calculates revenue per order, and groups it by month, product and region.
+2. **openpyxl** writes each summary to its own sheet, formats it, and adds a line chart (by month) or bar chart (by product and region).
+3. The header row has a fixed fill with white text. Data cells leave the font colour unset, so the text adapts to dark mode instead of staying dark on a dark background.
+
 ## How to run
+
+You need Python 3.
 
 ```bash
 git clone git@github.com:playfu1-d0ubt/excel-report-generator.git
@@ -35,20 +54,6 @@ python make_report.py sample_data/sales.csv sales_report.xlsx
 
 Use `python make_report.py --help` to see the options. To use your own data, give it a CSV with the six columns listed above.
 
-## Files
-
-| File | Purpose |
-|---|---|
-| `make_report.py` | Reads the CSV, builds the summaries, writes the Excel report |
-| `make_sample_data.py` | Generates a fake sales CSV (400 orders, same data every time) |
-| `sample_data/sales.csv` | The generated sample data. It is fake, with no real customer data |
-
-## How it works
-
-1. **pandas** loads the CSV, calculates revenue per order, and groups it by month, product and region.
-2. **openpyxl** writes each summary to its own sheet, formats it, and adds a line chart (by month) or bar chart (by product and region).
-3. The header row has a fixed fill with white text. Data cells leave the font colour unset, so the text adapts to dark mode instead of staying dark on a dark background.
-
 ## Limitations
 
 - The sample data runs from January to the end of September, so September is a partial month and shows as a dip on the chart. It isn't a real drop in sales.
@@ -56,6 +61,7 @@ Use `python make_report.py --help` to see the options. To use your own data, giv
 - It only produces revenue summaries, with no filtering by date range and no comparison between periods.
 - I haven't tested it in Microsoft Excel. The report was checked in LibreOffice Calc on Linux Mint.
 - The charts' text may not adapt to dark mode the way the cell text does.
+- No automated tests yet.
 
 ## What I learned
 
