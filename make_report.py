@@ -1,11 +1,12 @@
 """Build a formatted Excel sales report from a sales CSV."""
 
-import pandas as pd
-from openpyxl.styles import Alignment, Font, PatternFill
-from openpyxl.utils import get_column_letter
-from openpyxl.chart import BarChart, LineChart, Reference
 import argparse
 import sys
+
+import pandas as pd
+from openpyxl.chart import BarChart, LineChart, Reference
+from openpyxl.styles import Alignment, Font, PatternFill
+from openpyxl.utils import get_column_letter
 
 HEADER_FILL = PatternFill("solid", fgColor="1F4E78")
 HEADER_FONT = Font(bold=True, color="FFFFFF")
