@@ -205,6 +205,8 @@ def write_report(path, by_month, by_product, by_region):
             style_table(ws, money_columns=["revenue"])
 
         highlight_best(writer.sheets["By month"], "revenue")
+        highlight_best(writer.sheets["By product"], "revenue")
+        highlight_best(writer.sheets["By region"], "revenue")
         add_totals_row(writer.sheets["By month"], ["revenue"])
         add_totals_row(writer.sheets["By product"], ["orders", "units", "revenue"])
         add_totals_row(writer.sheets["By region"], ["orders", "revenue"])
