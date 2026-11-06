@@ -5,3 +5,4 @@ __pycache__/
 .env
 *.xlsx
 !sample_data/*.xlsx
+.~lock.sales_report.xlsx#
