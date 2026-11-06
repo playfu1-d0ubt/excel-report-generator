@@ -10,9 +10,9 @@ from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
 HEADER_FILL = PatternFill("solid", fgColor="1F4E78")
-HEADER_FONT = Font(bold=True, color="FFFFFF")
+HEADER_FONT = Font(name="Calibri", bold=True, color="FFFFFF")
 BEST_FILL = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
-BEST_FONT = Font(bold=True, color="006100")
+BEST_FONT = Font(name="Calibri", bold=True, color="006100")
 MONEY = "£#,##0.00"
 REQUIRED_COLUMNS = ["order_id", "date", "region", "product", "quantity", "unit_price"]
 
@@ -140,19 +140,20 @@ def add_chart(ws, chart, title, value_header, y_title):
     ws.add_chart(chart, f"{get_column_letter(ws.max_column + 2)}2")
 
 
-def add_totals_row(ws, value_header):
-    """Add a bold Total row under a sheet's table, summing one column."""
+def add_totals_row(ws, value_headers):
+    """Add a bold Total row under a sheet's table, summing each named column."""
     headers = [cell.value for cell in ws[1]]
-    value_col = headers.index(value_header) + 1
-    letter = get_column_letter(value_col)
     last_row = ws.max_row
     total_row = last_row + 1
 
     ws.cell(row=total_row, column=1, value="Total")
-    total_cell = ws.cell(
-        row=total_row, column=value_col, value=f"=SUM({letter}2:{letter}{last_row})"
-    )
-    total_cell.number_format = MONEY
+    for header in value_headers:
+        letter = get_column_letter(headers.index(header) + 1)
+        cell = ws[f"{letter}{total_row}"]
+        cell.value = f"=SUM({letter}2:{letter}{last_row})"
+        if header == "revenue":
+            cell.number_format = MONEY
+
     for cell in ws[total_row]:
         cell.font = Font(name="Calibri", size=11, bold=True)
 
@@ -204,7 +205,9 @@ def write_report(path, by_month, by_product, by_region):
             style_table(ws, money_columns=["revenue"])
 
         highlight_best(writer.sheets["By month"], "revenue")
-        add_totals_row(writer.sheets["By month"], "revenue")
+        add_totals_row(writer.sheets["By month"], ["revenue"])
+        add_totals_row(writer.sheets["By product"], ["orders", "units", "revenue"])
+        add_totals_row(writer.sheets["By region"], ["orders", "revenue"])
 
 
 def parse_args():
