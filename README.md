@@ -10,7 +10,9 @@ python make_report.py sample_data/sales.csv sales_report.xlsx
 
 ### What it produces
 
-An Excel workbook with three sheets: revenue **by month**, **by product** and **by region**. Each sheet has a styled header row, money formatted as pounds, columns sized to fit their contents, and a chart next to the table.
+An Excel workbook with three sheets: revenue **by month**, **by product** and **by region**. Each sheet has a styled header row, money formatted as pounds, columns sized to fit their contents, a bold **Total** row, the best row highlighted in green, and a chart next to the table.
+
+The **By month** sheet also has a **note** column. If the data stops before the end of the last month, that month is marked as a partial month, so a dip in the chart isn't mistaken for a real drop in sales.
 
 ![The By month sheet of the generated report](screenshots/report.png)
 
@@ -34,8 +36,10 @@ For the sample data (400 orders), the report totals £36,059.00 in revenue. The 
 ### How it works
 
 1. **pandas** loads the CSV, calculates revenue per order, and groups it by month, product and region.
-2. **openpyxl** writes each summary to its own sheet, formats it, and adds a line chart (by month) or bar chart (by product and region).
-3. The header row has a fixed fill with white text. Data cells leave the font colour unset, so the text adapts to dark mode instead of staying dark on a dark background.
+2. The latest date in the data decides whether the last month is complete. If not, the By month table gets a note.
+3. **openpyxl** writes each summary to its own sheet, formats it, and adds a line chart (by month) or bar chart (by product and region).
+4. A conditional formatting rule highlights the row with the highest revenue, and a Total row with `SUM` formulas goes in last, so the charts and the highlight don't include it.
+5. The header row has a fixed fill with white text. Data cells leave the font colour unset, so the text adapts to dark mode instead of staying dark on a dark background. The highlight sets both a light green fill and dark green text, so it stays readable in either mode.
 
 ## How to run
 
@@ -56,7 +60,8 @@ Use `python make_report.py --help` to see the options. To use your own data, giv
 
 ## Limitations
 
-- The sample data runs from January to the end of September, so September is a partial month and shows as a dip on the chart. It isn't a real drop in sales.
+- The sample data ends on 27 September, so September is a partial month. The report marks it in the note column, but the chart still shows it as a dip.
+- A month counts as partial only if the last date in the file is before the end of that month. A finished month with no sales on its last days is also flagged.
 - It expects exactly the column names listed above. Files with different names need renaming first.
 - It only produces revenue summaries, with no filtering by date range and no comparison between periods.
 - I haven't tested it in Microsoft Excel. The report was checked in LibreOffice Calc on Linux Mint.
@@ -69,3 +74,4 @@ Use `python make_report.py --help` to see the options. To use your own data, giv
 - Checking my numbers against each other (each table adding up to the same total) catches mistakes before they reach a report.
 - Reading and checking input properly (missing files, missing columns, bad rows) takes more code than the actual analysis, but it's what makes a tool usable by someone else.
 - Setting a font colour explicitly stops text adapting to dark mode. I found that out because the first version was unreadable in my own dark theme.
+- The order of steps matters when a sheet is built in layers. A Total row added before the chart or the highlight rule gets pulled into both.
