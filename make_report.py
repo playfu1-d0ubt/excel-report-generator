@@ -13,6 +13,7 @@ HEADER_FONT = Font(bold=True, color="FFFFFF")
 MONEY = "£#,##0.00"
 REQUIRED_COLUMNS = ["order_id", "date", "region", "product", "quantity", "unit_price"]
 
+
 def load_sales(path):
     try:
         df = pd.read_csv(path)
@@ -32,7 +33,9 @@ def load_sales(path):
     before = len(df)
     df = df.dropna(subset=["date", "quantity", "unit_price"])
     if len(df) < before:
-        print(f"Warning: skipped {before - len(df)} rows with a bad date, quantity or price.")
+        print(
+            f"Warning: skipped {before - len(df)} rows with a bad date, quantity or price."
+        )
     if df.empty:
         sys.exit("Error: no usable rows left after cleaning.")
 
@@ -47,7 +50,11 @@ def summarise(df):
 
     by_product = (
         df.groupby("product", as_index=False)
-        .agg(orders=("order_id", "count"), units=("quantity", "sum"), revenue=("revenue", "sum"))
+        .agg(
+            orders=("order_id", "count"),
+            units=("quantity", "sum"),
+            revenue=("revenue", "sum"),
+        )
         .sort_values("revenue", ascending=False)
     )
 
@@ -74,12 +81,15 @@ def style_table(ws, money_columns):
 
     for column in ws.columns:
         letter = get_column_letter(column[0].column)
-        longest = max(len(str(cell.value)) if cell.value is not None else 0 for cell in column)
+        longest = max(
+            len(str(cell.value)) if cell.value is not None else 0 for cell in column
+        )
         ws.column_dimensions[letter].width = longest + 4
 
         if column[0].value in money_columns:
             for cell in column[1:]:
                 cell.number_format = MONEY
+
 
 def add_chart(ws, chart, title, value_header, y_title):
     """Chart one column of a sheet's table, using column A for the labels."""
@@ -87,7 +97,9 @@ def add_chart(ws, chart, title, value_header, y_title):
     value_col = headers.index(value_header) + 1
     last_row = ws.max_row
 
-    data = Reference(ws, min_col=value_col, min_row=1, max_row=last_row)  # row 1 = series name
+    data = Reference(
+        ws, min_col=value_col, min_row=1, max_row=last_row
+    )  # row 1 = series name
     labels = Reference(ws, min_col=1, min_row=2, max_row=last_row)
     chart.add_data(data, titles_from_data=True)
     chart.set_categories(labels)
@@ -95,25 +107,64 @@ def add_chart(ws, chart, title, value_header, y_title):
     chart.title = title
     chart.y_axis.title = y_title
     chart.y_axis.number_format = "£#,##0"
-    chart.legend = None                    # one series, so a legend adds nothing
-    chart.x_axis.delete = False            # newer openpyxl versions hide the axes
-    chart.y_axis.delete = False            # unless these are set
+    chart.legend = None  # one series, so a legend adds nothing
+    chart.x_axis.delete = False  # newer openpyxl versions hide the axes
+    chart.y_axis.delete = False  # unless these are set
     chart.width, chart.height = 18, 9
 
     # place the chart two columns to the right of the table
     ws.add_chart(chart, f"{get_column_letter(ws.max_column + 2)}2")
+
+
+def add_totals_row(ws, value_header):
+    """Add a bold Total row under a sheet's table, summing one column."""
+    headers = [cell.value for cell in ws[1]]
+    value_col = headers.index(value_header) + 1
+    letter = get_column_letter(value_col)
+    last_row = ws.max_row
+    total_row = last_row + 1
+
+    ws.cell(row=total_row, column=1, value="Total")
+    total_cell = ws.cell(
+        row=total_row, column=value_col, value=f"=SUM({letter}2:{letter}{last_row})"
+    )
+    total_cell.number_format = MONEY
+    for cell in ws[total_row]:
+        cell.font = Font(name="Calibri", size=11, bold=True)
+
 
 def write_report(path, by_month, by_product, by_region):
     with pd.ExcelWriter(path, engine="openpyxl") as writer:
         by_month.to_excel(writer, sheet_name="By month", index=False)
         by_product.to_excel(writer, sheet_name="By product", index=False)
         by_region.to_excel(writer, sheet_name="By region", index=False)
-        add_chart(writer.sheets["By month"], LineChart(), "Revenue by month", "revenue", "Revenue")
-        add_chart(writer.sheets["By product"], BarChart(), "Revenue by product", "revenue", "Revenue")
-        add_chart(writer.sheets["By region"], BarChart(), "Revenue by region", "revenue", "Revenue")
-        
+        add_chart(
+            writer.sheets["By month"],
+            LineChart(),
+            "Revenue by month",
+            "revenue",
+            "Revenue",
+        )
+        add_chart(
+            writer.sheets["By product"],
+            BarChart(),
+            "Revenue by product",
+            "revenue",
+            "Revenue",
+        )
+        add_chart(
+            writer.sheets["By region"],
+            BarChart(),
+            "Revenue by region",
+            "revenue",
+            "Revenue",
+        )
+
         for ws in writer.book.worksheets:
             style_table(ws, money_columns=["revenue"])
+
+        add_totals_row(writer.sheets["By month"], "revenue")
+
 
 def parse_args():
     parser = argparse.ArgumentParser(
@@ -137,7 +188,9 @@ def main():
     except PermissionError:
         sys.exit(f"Error: can't write '{args.output}'. Is it open in another program?")
 
-    print(f"Saved {args.output} ({len(df)} orders, £{df['revenue'].sum():,.2f} revenue)")
+    print(
+        f"Saved {args.output} ({len(df)} orders, £{df['revenue'].sum():,.2f} revenue)"
+    )
 
 
 if __name__ == "__main__":
