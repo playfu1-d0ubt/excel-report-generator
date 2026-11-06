@@ -5,11 +5,14 @@ import sys
 
 import pandas as pd
 from openpyxl.chart import BarChart, LineChart, Reference
+from openpyxl.formatting.rule import FormulaRule
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
 HEADER_FILL = PatternFill("solid", fgColor="1F4E78")
 HEADER_FONT = Font(bold=True, color="FFFFFF")
+BEST_FILL = PatternFill(start_color="C6EFCE", end_color="C6EFCE", fill_type="solid")
+BEST_FONT = Font(bold=True, color="006100")
 MONEY = "£#,##0.00"
 REQUIRED_COLUMNS = ["order_id", "date", "region", "product", "quantity", "unit_price"]
 
@@ -133,6 +136,22 @@ def add_totals_row(ws, value_header):
         cell.font = Font(name="Calibri", size=11, bold=True)
 
 
+def highlight_best(ws, value_header):
+    """Highlight the row with the highest value in one column of a sheet."""
+    headers = [cell.value for cell in ws[1]]
+    value_col = headers.index(value_header) + 1
+    letter = get_column_letter(value_col)
+    last_row = ws.max_row
+    last_col = get_column_letter(ws.max_column)
+
+    rule = FormulaRule(
+        formula=[f"${letter}2=MAX(${letter}$2:${letter}${last_row})"],
+        fill=BEST_FILL,
+        font=BEST_FONT,
+    )
+    ws.conditional_formatting.add(f"A2:{last_col}{last_row}", rule)
+
+
 def write_report(path, by_month, by_product, by_region):
     with pd.ExcelWriter(path, engine="openpyxl") as writer:
         by_month.to_excel(writer, sheet_name="By month", index=False)
@@ -163,6 +182,7 @@ def write_report(path, by_month, by_product, by_region):
         for ws in writer.book.worksheets:
             style_table(ws, money_columns=["revenue"])
 
+        highlight_best(writer.sheets["By month"], "revenue")
         add_totals_row(writer.sheets["By month"], "revenue")
 
 
