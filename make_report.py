@@ -70,6 +70,27 @@ def summarise(df):
     return by_month, by_product, by_region
 
 
+def find_partial_month(df):
+    """Return the last month as text (e.g. "2026-09") if the data stops before month end."""
+    last_date = df["date"].max().normalize()
+    month_end = last_date + pd.offsets.MonthEnd(0)
+    if last_date < month_end:
+        return last_date.strftime("%Y-%m")
+    return None
+
+
+def flag_partial_month(df, by_month):
+    """Add a note column to the monthly table that marks a partial final month."""
+    by_month["note"] = ""
+    partial = find_partial_month(df)
+    if partial is not None:
+        last_date = df["date"].max()
+        by_month.loc[by_month["month"] == partial, "note"] = (
+            f"Partial month (data ends {last_date:%d %b})"
+        )
+    return by_month
+
+
 def style_table(ws, money_columns):
     """Format a sheet that holds one table starting at A1."""
     for cell in ws[1]:
@@ -202,6 +223,7 @@ def main():
 
     df = load_sales(args.input)
     by_month, by_product, by_region = summarise(df)
+    by_month = flag_partial_month(df, by_month)
 
     try:
         write_report(args.output, by_month, by_product, by_region)
